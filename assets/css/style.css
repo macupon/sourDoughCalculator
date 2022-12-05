@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Trirong");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: #95afc0;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+.portada img{
+    opacity: 0.8;
+    border-radius: 1%;
+}
+.titulo {
+    font-family: 'trirong', serif;
+    font-size: 45px;
+    margin-bottom: 60px;
+    font-weight: bolder;
+    color: #f5f6fa;
+}
+.container-fluid {
+    margin-top: 5px;
+    font-size: 35px;
+}
+
+/*ELEGIR RECETA*/
+.check_receta {
+    font-family: 'bebas neue';
+    margin-right: 5px;
+    margin-top: 10px;
+    background-color: #f5f6fa;
+    border-radius: 6%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox {
+    padding: 30px;
+}
+
+/*INGREDIENTES*/
+
+.ingredientes {
+    font-family: 'bebas neue';
+    background-color: #f5f6fa;
+    border-radius: 6%;
+}
+.ingrediente_1{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+    
+}
+.inputext {
+    width:90px;
+    border-radius: 5px;
+  }
+
+/*PORCENTAJES*/
+
+.porcentajes {
+    font-family: 'bebas neue';
+    margin-left: 5px;
+    background-color: #f5f6fa;
+    border-radius: 6%;
+    background-size: auto;
+    display: grid;
+    justify-items: center;
+    align-items: center; 
+    max-width: 80%;
+}
+  progress {
+    opacity: 0;
+  } 
+  .progress-element {
+    width: 300px;
+  }
+  .progress-container {
+    position: relative;
+    background: #eee;
+    height: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    
+  }
+  
+  .progress-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: #ffb142;
+  }
+  
+  .progress-element--inoculacion .progress-container::before {
+    animation: progress-inoculacion 1s ease-in forwards;
+  }
+  
+  .progress-element--hidratacion .progress-container::before {
+    animation: progress-hidratacion 1s ease-in forwards;
+  }
+  
+  .progress-element--sal .progress-container::before {
+    animation: progress-sal 1s ease-in forwards;
+  }
+
+
+  .progress-label {
+    position: relative;
+  }
+  
+  @property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+  
+  .progress-label::after {
+    counter-reset: num var(--num);
+    content: counter(num) '%';
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .progress-element--inoculacion .progress-label::after {
+    animation: progress-text-inoculacion 1s ease-in forwards;
+  }
+  
+  .progress-element--hidratacion .progress-label::after {
+    animation: progress-text-hidratacion 1s ease-in forwards;
+  }
+  
+  .progress-element--sal .progress-label::after {
+    animation: progress-text-sal 1s ease-in forwards;
+  }
+
+  
+  
+  @keyframes progress-inoculacion {
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes progress-hidratacion {
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes progress-sal {
+    to {
+      width: 100%;
+    }
+  }
+
+ 
+  
+  @keyframes progress-text-inoculacion {
+    to {
+      --num: 20;
+    }
+  }
+  
+  @keyframes progress-text-hidratacion {
+    to {
+      --num: 30;
+    }
+  }
+  
+  @keyframes progress-text-sal {
+    to {
+      --num: 30;
+    }
+  }
+
+
+
+  
