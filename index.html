@@ -36,66 +36,64 @@
                 <div class="checkbox">
                     <label> Receta Alex </label>
                     <span class="radio">
-                        <input type="radio" value="RA">
+                        <input  id="ra" type="radio" value="RA" state="unchecked" name="radiorec">
                     </span>
                 </div>
                 <div class="checkbox">
                     <label> Receta Jack</label>
                     <span class="radio">
-                        <input type="radio" value="RJ">
+                        <input id="rj" type="radio" value="RJ" name="radiorec">
                     </span>
                 </div>
                 <div class="checkbox disabled">
-                    <label>Receta Profe del Pan</label>
+                    <label>Receta Inti</label>
                     <span class="radio">
-                        <input type="radio" value="RPP">
+                        <input id="ri" type="radio" value="RI" name="radiorec">
                     </span>
                 </div>
             </div>
 
             <div class="col ingredientes">
+                        <div class="ingrediente_1">
+                            <label class="label_1" id="sour_label" for="mail">SourDough</label>
+                            <input id="sour" class="inputext" type="text" id="sourInput"><p>Gr</p>
+                        </div>
+
+                        <div class="ingrediente_1">
+                            <label class="label_1" for="mail">Farina</label>
+                            <input id="farina" class="inputext" type="text"><p>Gr</p>
+                        </div>
                 
-                <div class="ingrediente_1">
-                    <label id="sour_label" for="mail">SourDough</label>
-                    <input class="inputext" type="text" id="sourInput">
-                </div>
+                        <div class="ingrediente_1">
+                            <label class="label_1" for="mail">Agua</label>
+                            <input id="agua" class="inputext" type="text"><p>Gr</p>
+                        </div>
 
-                <div class="ingrediente_1">
-                    <label for="mail">Farina</label>
-                    <input class="inputext" type="text">
-                </div>
-        
-                <div class="ingrediente_1">
-                    <label for="mail">Agua</label>
-                    <input class="inputext" type="text">
-                </div>
-
-                <div class="ingrediente_1">
-                    <label for="mail">Sal</label>
-                    <input class="inputext" type="text">
-                </div>
-            
+                        <div class="ingrediente_1">
+                            <label class="label_1" for="mail">Sal</label>
+                            <input id="sal" class="inputext" type="text"><p class="p">Gr</p>
+                        </div>
             </div>
             
             <div class="col porcentajes">
                     <div class="progress-element progress-element--inoculacion">
-                        <p class="progress-label">Inoculacion</p>
+                        <p class="progress-label progress-label-ino">Inoculacion</p>
                         <div class="progress-container">
                             <progress id="barraIno" max="100" value="95"></progress>
                         </div>
                     </div>
                     
                     <div class="progress-element progress-element--hidratacion">
-                        <p class="progress-label">Hidratacion</p>
+                        <p class="progress-label progress-label-hidr">Hidratacion</p>
                         <div class="progress-container">
-                            <progress max="100" value="20"></progress>
+                            <progress id="barrahid" max="100" value="20"></progress>
                         </div>
                     </div>
                     
                     <div class="progress-element progress-element--sal">
-                        <p class="progress-label">Sal</p>
+                        <p class="progress-label progress-label-sal">Sal</p>
                         <div class="progress-container">
-                            <progress max="100" value="20"></progress>
+                            <progress id="barrasal" max="100" value="20"></progress>
                         </div>
                     </div>
             </div>

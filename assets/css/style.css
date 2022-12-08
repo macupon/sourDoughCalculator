@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Trirong");
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+:root{
+  --num: 0;
+  --sinpor: 0;
 }
 
 .body {
@@ -24,6 +29,7 @@
     margin-bottom: 60px;
     font-weight: bolder;
     color: #f5f6fa;
+    text-shadow: #596275 1px 0 10px;
 }
 .container-fluid {
     margin-top: 5px;
@@ -32,6 +38,7 @@
 
 /*ELEGIR RECETA*/
 .check_receta {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     font-family: 'bebas neue';
     margin-right: 5px;
     margin-top: 10px;
@@ -43,12 +50,15 @@
 }
 
 .checkbox {
-    padding: 30px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: 6%;
+  padding: 30px;
 }
 
 /*INGREDIENTES*/
 
 .ingredientes {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     font-family: 'bebas neue';
     background-color: #f5f6fa;
     border-radius: 6%;
@@ -58,18 +68,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
     
 }
 .inputext {
     width:90px;
     border-radius: 5px;
+    margin-right: 0px;box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   }
+  
+.label_1 {
+  display: inline-block;
+  width: 80px;
+}
+
 
 /*PORCENTAJES*/
 
+
 .porcentajes {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     font-family: 'bebas neue';
     margin-left: 5px;
     background-color: #f5f6fa;
@@ -105,30 +124,20 @@
     background: #ffb142;
   }
   
-  .progress-element--inoculacion .progress-container::before {
-    animation: progress-inoculacion 1s ease-in forwards;
-  }
-  
-  .progress-element--hidratacion .progress-container::before {
-    animation: progress-hidratacion 1s ease-in forwards;
-  }
-  
-  .progress-element--sal .progress-container::before {
-    animation: progress-sal 1s ease-in forwards;
-  }
-
-
   .progress-label {
     position: relative;
   }
-  
+
+
+
+  /*Declara vriable --num */
   @property --num {
     syntax: "<integer>";
     initial-value: 0;
     inherits: false;
   }
   
-  .progress-label::after {
+  .progress-label-ino::after {
     counter-reset: num var(--num);
     content: counter(num) '%';
     position: absolute;
@@ -136,6 +145,54 @@
     right: 0;
   }
   
+  /*Declara Variable --sinpor */
+
+  @property --sinpor{
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+  
+  .progress-label-ino::after {
+    counter-reset: num var(--sinpor);
+    content: counter(num) '%';
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+/*Declara variable --numhidr */
+@property --numhidr {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.progress-label-hidr::after {
+  counter-reset: num var(--numhidr);
+  content: counter(num) '%';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*Declara Variable --sinporhidr */
+
+@property --sinporhidr{
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.progress-label-hidr::after {
+  counter-reset: num var(--sinporhidr);
+  content: counter(num) '%';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
   .progress-element--inoculacion .progress-label::after {
     animation: progress-text-inoculacion 1s ease-in forwards;
   }
@@ -147,24 +204,35 @@
   .progress-element--sal .progress-label::after {
     animation: progress-text-sal 1s ease-in forwards;
   }
-
+  
+  .progress-element--inoculacion .progress-container::before {
+    animation: progress-inoculacion 1s ease-in forwards;
+  }
+  
+  .progress-element--hidratacion .progress-container::before {
+    animation: progress-hidratacion 1s ease-in forwards;
+  }
+  
+  .progress-element--sal .progress-container::before {
+    animation: progress-sal 1s ease-in forwards;
+  }
   
   
   @keyframes progress-inoculacion {
     to {
-      width: 100%;
+      width: var(--num);
     }
   }
   
   @keyframes progress-hidratacion {
     to {
-      width: 100%;
+      width: var(--numhidr);
     }
   }
   
   @keyframes progress-sal {
     to {
-      width: 100%;
+      width: var(--num);
     }
   }
 
@@ -172,19 +240,19 @@
   
   @keyframes progress-text-inoculacion {
     to {
-      --num: 20;
+      --sinpor: 0;
     }
   }
   
   @keyframes progress-text-hidratacion {
     to {
-      --num: 30;
+      --sinporhidr: 0;
     }
   }
   
   @keyframes progress-text-sal {
     to {
-      --num: 30;
+      --num: 0;
     }
   }
 
