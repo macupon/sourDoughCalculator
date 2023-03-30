@@ -130,7 +130,7 @@
 
 
 
-  /*Declara vriable --num */
+  /*Declara variable --num para INOCULACION*/
   @property --num {
     syntax: "<integer>";
     initial-value: 0;
@@ -145,7 +145,7 @@
     right: 0;
   }
   
-  /*Declara Variable --sinpor */
+  /*Declara Variable --sinpor para INOCULACION */
 
   @property --sinpor{
     syntax: "<integer>";
@@ -161,31 +161,31 @@
     right: 0;
   }
 
-/*Declara variable --numhidr */
-@property --numhidr {
+/*Declara variable --numhidratacion para HIDRATACION */
+@property --numhidratacion {
   syntax: "<integer>";
   initial-value: 0;
   inherits: false;
 }
 
 .progress-label-hidr::after {
-  counter-reset: num var(--numhidr);
+  counter-reset: num var(--numhidratacion);
   content: counter(num) '%';
   position: absolute;
   top: 0;
   right: 0;
 }
 
-/*Declara Variable --sinporhidr */
+/*Declara Variable --sinporhidratacion para HIDRATACION */
 
-@property --sinporhidr{
+@property --sinporhidratacion{
   syntax: "<integer>";
   initial-value: 0;
   inherits: false;
 }
 
 .progress-label-hidr::after {
-  counter-reset: num var(--sinporhidr);
+  counter-reset: num var(--sinporhidratacion);
   content: counter(num) '%';
   position: absolute;
   top: 0;
@@ -226,7 +226,7 @@
   
   @keyframes progress-hidratacion {
     to {
-      width: var(--numhidr);
+      width: var(--numhidratacion);
     }
   }
   
@@ -246,13 +246,13 @@
   
   @keyframes progress-text-hidratacion {
     to {
-      --sinporhidr: 0;
+      --sinporhidratacion: 0;
     }
   }
   
   @keyframes progress-text-sal {
     to {
-      --num: 0;
+      --sinpor: 0;
     }
   }
 
